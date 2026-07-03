@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200;
+  font-family: 'Noto Sans Bengali', 'system-ui', sans-serif;
+}
+
+/* RTL Layout Support for Bengali */
+html[dir='rtl'] {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir='rtl'] input,
+html[dir='rtl'] textarea {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Chat message animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message-bubble {
+  @apply animate-[slideIn_0.3s_ease-out];
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Streaming text effect */
+@keyframes typingCursor {
+  0%, 49% {
+    border-right-color: rgba(0, 0, 0, 0.75);
+  }
+  50%, 100% {
+    border-right-color: transparent;
+  }
+}
+
+.typing-cursor {
+  animation: typingCursor 1s infinite;
+}
+
+/* Loading skeleton */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Input field styles */
+input[type='text'],
+input[type='email'],
+textarea {
+  @apply px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors;
+}
+
+/* Button styles */
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 text-gray-900 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-gray-600;
+}
+
+.btn-danger {
+  @apply bg-red-600 text-white hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600;
+}
+
+/* Badge styles */
+.badge {
+  @apply inline-block px-2 py-1 text-xs font-semibold rounded-full;
+}
+
+.badge-primary {
+  @apply bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200;
+}
+
+.badge-success {
+  @apply bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200;
+}
+
+.badge-warning {
+  @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200;
+}
+
+/* Document card styles */
+.document-card {
+  @apply border border-gray-200 dark:border-gray-700 rounded-lg p-4 bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow;
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 dark:bg-gray-600 rounded-full hover:bg-gray-500 dark:hover:bg-gray-500;
+}
+
+/* Focus visible for accessibility */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-blue-500;
+}
+
+/* Print styles */
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
+
+  .no-print {
+    @apply hidden;
+  }
+}

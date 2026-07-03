@@ -1,0 +1,11 @@
+{
+  "app": "npx ts-node lib/proofsheet-tools-stack.ts",
+  "context": {
+    "availability_zones:account=123456789012:region=us-west-2": [
+      "us-west-2a",
+      "us-west-2b",
+      "us-west-2c"
+    ]
+  },
+  "requireApproval": "broadening"
+}
