@@ -117,8 +117,8 @@ npm run test
 
 ## Support & Feedback
 
-Questions or issues? [Create an issue](https://github.com/your-org/borobhai/issues) or email [your-email@example.com](mailto:your-email@example.com).
+Questions or issues? [Create an issue](https://github.com/your-org/borobhai/issues) or email [najmun@rooscloset.store](mailto:najmun@rooscloset.store).
 
 ---
 
-**Made with ❤️ for civic empowerment**
+**Made for civic empowerment**
